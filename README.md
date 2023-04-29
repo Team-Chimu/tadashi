@@ -97,7 +97,7 @@ Our data is on a hosted NoSQL databse. Any hosted cluster that supports standard
 ### Data flow
 Dataflow is a straight-forward request and serve structure, where the client requests data via the API routes and is served the related data. 
 Most data is reliant on a session token maintained on the server through a cookie. For security reasons, information regarding a organization and/or team requires the logged user to have membership within said org/team. **EDIT**
-![Chīmu Data Flow Diagram]() NO DIAGRAM YET
+![Chīmu Data Flow Diagram](./diagrams/chimu-dataflow.jpg)
 
 ---
 ## Data 
