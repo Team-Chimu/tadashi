@@ -20,7 +20,7 @@
 - Anna Younsu Kim - UX Designer
   - UW Email: yskim01@uw.edu
   - Linkedin:https://www.linkedin.com/in/anna-kim-0419251b0
-Youjin Jung - UX Researcher & Designer
+- Youjin Jung - UX Researcher & Designer
   - UW email: youjinj@uw.edu
   - Linkedin:https://www.linkedin.com/in/youjin-jung-
 
