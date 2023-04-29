@@ -51,6 +51,7 @@ async function main() {
         //orgId: String,
         creator: String,
         members: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+        orgid: String,
         expiresAt: {type: Date, expires: 3600, default: Date.now}
     })
 

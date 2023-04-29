@@ -67,8 +67,6 @@ router.put('/setpic', async (req, res) => {
                 status: 'success'
             })
         } catch (error) {
-            // error is null for some reason
-            console.log(error)
             res.json({
                 status: 'error',
                 error: 'there was an unexpected error'
