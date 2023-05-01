@@ -3,6 +3,7 @@ import path from 'path';
 import logger from 'morgan';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import boomRouter from './routes/boom.js';
 import indexRouter from './routes/index.js';
 import loginRouter from './routes/login.js';
 import usersRouter from './routes/api/users.js';
@@ -77,7 +78,7 @@ app.use(sessions({
 
 app.use(cors({
     // origin: ['https://tadashi-app.herokuapp.com', 'https://tadashi-cli.herokuapp.com'],
-    origin: 'http://localhost:3000',
+    origin: ['http://localhost:3000', 'http://localhost:3002'],
     credentials: true
 }));
 
@@ -181,6 +182,7 @@ app.get('/signout',
 )
 
 app.use("/", indexRouter);
+app.use("/boom", boomRouter);
 app.use("/login", loginRouter);
 app.use("/api/users", usersRouter);
 app.use("/api/org", orgsRouter);
