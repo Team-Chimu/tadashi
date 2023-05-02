@@ -116,13 +116,7 @@ async function main() {
     const teamAgreementSchema = new mongoose.Schema({
         org: { type: mongoose.Schema.Types.ObjectId, ref: "Org" },
         teamGoals: String,
-        meetingTimes: [{
-            weekday: String,
-            startHour: String,
-            startMinute: String,
-            endHour: String,
-            endMinute: String
-        }],
+        meetingTimes: String,
         communicationChannels: String,
         pulse: {
             weekday: String,

@@ -62,18 +62,18 @@ router.post('/create', async (req, res) => {
 
             let teamGoals = req.body.teamGoals;
 
-            let meetingTimesArr = req.body.meetingTimes;
-            let meetingTimes = [];
-            for (let i = 0; i < meetingTimesArr.length; i++) {
-                let content = {
-                    weekday: meetingTimesArr[i][0],
-                    startHour: meetingTimesArr[i][1],
-                    startMinute: meetingTimesArr[i][2],
-                    endHour: meetingTimesArr[i][3],
-                    endMinute: meetingTimesArr[i][4]
-                }
-                meetingTimes.push(content)
-            }
+            let meetingTimes = req.body.meetingTimes;
+            // let meetingTimes = [];
+            // for (let i = 0; i < meetingTimesArr.length; i++) {
+            //     let content = {
+            //         weekday: meetingTimesArr[i][0],
+            //         startHour: meetingTimesArr[i][1],
+            //         startMinute: meetingTimesArr[i][2],
+            //         endHour: meetingTimesArr[i][3],
+            //         endMinute: meetingTimesArr[i][4]
+            //     }
+            //     meetingTimes.push(content)
+            // }
 
             let communicationChannels = req.body.communicationChannels;
 
@@ -91,45 +91,45 @@ router.post('/create', async (req, res) => {
             };
 
             // schedule send email
-            let members = org.members;
-            let memberEmails = [];
-            for (let i = 0; i < members.length; i++){
-                let member = await req.db.User.findById(members[i]);
-                let memberEmail = member.email;
-                memberEmails.push(memberEmail);
-            }
+            // let members = org.members;
+            // let memberEmails = [];
+            // for (let i = 0; i < members.length; i++){
+            //     let member = await req.db.User.findById(members[i]);
+            //     let memberEmail = member.email;
+            //     memberEmails.push(memberEmail);
+            // }
 
-            let transporter = nodemailer.createTransport({
-                service: 'Gmail',
-                auth: {
-                    user: 'chimunotification@gmail.com',
-                    pass: 'niwawnxzlxfqhlur'
-                }
-            });
+            // let transporter = nodemailer.createTransport({
+            //     service: 'Gmail',
+            //     auth: {
+            //         user: 'chimunotification@gmail.com',
+            //         pass: 'niwawnxzlxfqhlur'
+            //     }
+            // });
             
-            let mailOptions = {
-                from: 'chimunotification@gmail.com',
-                to: memberEmails,
-                subject: 'Test Email sent by Node.js',
-                text: 'Test Test'
-            };
+            // let mailOptions = {
+            //     from: 'chimunotification@gmail.com',
+            //     to: memberEmails,
+            //     subject: 'Test Email sent by Node.js',
+            //     text: 'Test Test'
+            // };
             
-            let second = 1;
-            let minute = pulse.minute;
-            let hour = pulse.hour;
-            let day = pulse.weekday;
-            let dayOfMonth = '*';
-            let month = '*';
+            // let second = 1;
+            // let minute = pulse.minute;
+            // let hour = pulse.hour;
+            // let day = pulse.weekday;
+            // let dayOfMonth = '*';
+            // let month = '*';
             
-            cron.schedule(`${second} ${minute} ${hour} ${dayOfMonth} ${month} ${day}`, () => {
-                transporter.sendMail(mailOptions, function(error, info){
-                if (error) {
-                    console.log(error);
-                } else {
-                    console.log('Email sent: ' + info.response);
-                }
-                });
-            });            
+            // cron.schedule(`${second} ${minute} ${hour} ${dayOfMonth} ${month} ${day}`, () => {
+            //     transporter.sendMail(mailOptions, function(error, info){
+            //     if (error) {
+            //         console.log(error);
+            //     } else {
+            //         console.log('Email sent: ' + info.response);
+            //     }
+            //     });
+            // });            
 
             let teamAgreement = await req.db.TeamAgreement.create({
                 org : org,
