@@ -57,8 +57,6 @@ router.post('/create', async (req, res) => {
     // if(req.session.isAuthenticated) {
         try {
             const orgid = req.body.orgid;
-            
-            let org = await req.db.Org.findById(orgid);
 
             let teamGoals = req.body.teamGoals;
 
@@ -77,18 +75,18 @@ router.post('/create', async (req, res) => {
 
             let communicationChannels = req.body.communicationChannels;
 
-            let pulseArr = req.body.pulse;
+            let pulse = req.body.pulse;
 
             // let pulseArr = [];
             // pulseArr[0] = 2;
             // pulseArr[1] = 0;
             // pulseArr[2] = 51;
 
-            let pulse = {
-                weekday: pulseArr[0],
-                hour: pulseArr[1],
-                minute: pulseArr[2]
-            };
+            // let pulse = {
+            //     weekday: pulseArr[0],
+            //     hour: pulseArr[1],
+            //     minute: pulseArr[2]
+            // };
 
             // schedule send email
             // let members = org.members;
@@ -132,7 +130,7 @@ router.post('/create', async (req, res) => {
             // });            
 
             let teamAgreement = await req.db.TeamAgreement.create({
-                org : org,
+                orgid : orgid,
                 teamGoals: teamGoals,
                 meetingTimes: meetingTimes,
                 communicationChannels: communicationChannels,
@@ -158,32 +156,24 @@ router.post('/create', async (req, res) => {
     // }
 });
 
-router.put('/:orgid', async (req, res) => {
+router.put('/edit', async (req, res) => {
     // console.log('sessionIsAuthenticated: ' + req.session.id)
     // if(req.session.isAuthenticated) {
         try {
-            console.log('here');
-            const orgid = req.params.orgid;
-            const teamAgreement = await req.db.TeamAgreement.findOne({orgid: orgid});
-            let meetingTimes = req.body.meetingTimes ? req.body.meetingTimes : null;
-            let pulse = req.body.pulse ? req.body.pulse : null;
-            let workload = req.body.wordload ? req.body.workload : null;
-            if(meetingTimes){
-                teamAgreement.meetingTimes = meetingTimes;
-            }
-            if(workload){
-                teamAgreement.workload = workload;
-            }
-            if(pulse){
-                teamAgreement.pulse = pulse;
-            }
-            teamAgreement.save();
+            const orgid = req.body.orgid;
+            await req.db.TeamAgreement.findOneAndUpdate(
+                {
+                    orgid : orgid
+                },
+                {
+                    teamGoals: req.body.teamGoals,
+                    meetingTimes : req.body.meetingTimes,
+                    communicationChannels : req.body.communicationChannels,
+                    pulse : req.body.pulse
+                }
+            )
             res.json({
-                status: 'success',
-                orgid: teamAgreement.orgid,
-                meetingTimes: teamAgreement.meetingTimes,
-                workload: teamAgreement.workload,
-                pulse: teamAgreement.pulse
+                status: 'success'
             });
         } catch (error) {
             res.json({
