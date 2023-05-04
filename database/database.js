@@ -141,8 +141,8 @@ async function main() {
     });
 
     const pulseSchema = new mongoose.Schema({
-        orgid: { type: mongoose.Schema.Types.ObjectId, ref: "Org" },
-        userid: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+        orgid: String,
+        userid: String,
         questions: [String],
         answers: [String],
         week: Number
