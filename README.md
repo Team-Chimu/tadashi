@@ -5,7 +5,6 @@
 - [Client Repo and Design Documentation](https://github.com/Team-Chimu/Chiimu_Frontend)
 - [Landing Page](https://team-chimu.github.io/chimu-landing/)
 
-
 ### Authors
 - Yiyang (Ian) Wang - Project Manager
   - UW Email: ianuw@uw.edu
@@ -30,7 +29,6 @@
 
 ### Additional Documentation
 -  Design Docs: [Chīmu Figma](https://www.figma.com/file/fhkwXAdBln63vfel1nE4OR/Team-Chimu?node-id=1%3A2&t=UGYFn1aGtxvoOA2F-1)
--  Research: NO LINK YET
 ---
 ## About 
 Many college students have had a bad team experience. According to an online survey that was conducted consisting of 30 University of Washington students across various majors, approximately 30% of respondents noted that their biggest pain point was communication, and another 40% of respondents noted that their pain point in group work was equity of work among team members. From our research, we found that there are currently no solutions that offer guidance for team collaboration in a class environment.
@@ -86,8 +84,6 @@ Chīmu is hosted on two separate deployments, the API and the client. The genera
 Our data is on a hosted NoSQL databse. Any hosted cluster that supports standard MongoDB queries shoudl eb interchangeable.
 
 ### Services
-### Services
-
 **Deployment**: Heroku
 - Link to Server: [Chīmu Server]() NO LINK
 - Link to Client: [Chimu Client]() NO LINK
@@ -96,25 +92,19 @@ Our data is on a hosted NoSQL databse. Any hosted cluster that supports standard
 
 ### Data flow
 Dataflow is a straight-forward request and serve structure, where the client requests data via the API routes and is served the related data. 
-Most data is reliant on a session token maintained on the server through a cookie. For security reasons, information regarding a organization and/or team requires the logged user to have membership within said org/team. **EDIT**
+Most data is reliant on a session token maintained on the server through a cookie. For security reasons, information regarding a organization and/or team requires the logged user to have membership within said org/team. 
 ![Chīmu Data Flow Diagram](./diagrams/chimu-dataflow.jpg)
 
 ---
 ## Data 
-**EDIT**
+The goal of the database structure is to allow flexibility in further development for organization features while allowing the user to have full functionality in multiple organizations. To accomplish this, only the organization does not hold any references to any other schemas except for the user. It is the job of the other schemas such as team agreement and pulse hold references to the org so future features can use this same pattern to easily connect to the organization without having to change any details of the organization.
 
 ### Schema
-Below is a diagram of our logical schema structure. Note that this is only logical and not the physical implementation. **EDIT**
+Below is a diagram of our logical schema structure. Note that this is only logical and not the physical implementation.
 
 For a detailed list of available fields and connections, consult `database/database.js`.
 
-![Chīmu Schema Structure]() NO DIAGRAM YET
-
-### Sample Data
-
-Sample data can be imported to a local instance of a NoSQL database using the included .json files within `NO SAMPLE DATA YET`. Consult the included README for instructions on how to setup using MongoDBCompass. **EDIT**
-
-Note that this data is fabricated and not representative of real people or the real world. DO NOT deploy Chīmu with this data included as it represents a security risk.
+![Chīmu Schema Structure](./diagrams/chimu-schema.jpg) 
 
 ### API 
 The API is structured in a REST-like format, with GET, POST, PUT, DELETE entries for most endpoints. Endpoints have been tested, however, further testing is required and should be automated going forward. For additional information on payloads, type returns, and expected functionality, consult comments preceding routes.
@@ -124,7 +114,51 @@ API functionality is not extensive but sufficient for current implented client a
 Domain: NO LINK YET
 
 **Routes**
-TO BE FILLED
+
+**/boom**
+- DELETE /: Deletes everything in database
+**/login**
+- POST /signin: Signs users in with email and password
+- POST /signup: Signs up users
+- POST /signout: Signs out users
+
+**/api/users**
+- GET /self : Returns current user information for session
+- PUT /setpic: Sets users’ profile picture
+- GET /:userid : Returns users information
+- PUT /:userid : Edits users information
+- PUT /information/:userid: Edits users’ personal information
+- DELETE /:userid : Deletes references to user
+
+**/api/org**
+- POST /create: Create new team
+- GET /:orgid: Returns team information
+- PUT /:orgid: Edits team information
+- POST /:orgid/leave: Remove logged user from specified team
+- GET /:orgid/viewed: switch user status to viewed profiles
+- POST /:orgid/kick: Remove a user from a specified team
+
+**/api/orgAccessCode**
+- POST /create: Create a new access code for members to join
+- GET /:accesscode: Get details from users currently in the group
+- DELETE /delete: delete access code
+- POST /join: Join the group using the access code
+
+**/api/teamAgreement**
+- GET /:orgid: Returns team agreement information
+- POST /create: Create team agreement for a specified team
+- PUT /:orgid: Modify team agreement for a specified team
+- DELETE /:orgid: Delete team agreement for a specified team
+
+**/api/userprofile**
+- GET /:orgid/:userid: Returns user profile for a specified user
+- POST /create: Create user profile for a specified user
+- PUT /:orgid/:userid: Modify user profile for a specified user
+- DELETE /:orgid/:userid: Delete user profile for a specified user
+
+**/api/pulse**
+- GET /:orgid/:week: Return the average of pulse result for a specified team and week
+- POST /create/:orgid/:week: Submit pulse for a specified user
 
 ### Postman
 
@@ -177,13 +211,18 @@ Listed below is our suggestion on how this project may be continued forward. Thi
 This section is not meant to be authoritative nor exhaustive. It is meant to guide future teams on what they might seek to investigate going forward.
 
 ### Next Steps
-TO BE FILLED **EDIT**
+
+- Profile editing functionality and UI design in the front-end
+- Profile deletion functionality and UI design in the front-end
+- Organization editing functionality and UI design in the front-end
+- Organization deletion functionality and UI design in the front-end
 
 ### Known Issues
-TO BE FILLED **EDIT**
+- The same account can be logged in at the same time on 2 different devices which can cause issues like joining your own group
 
 ### Suggestions
-TO BE FILLED **EDIT**
-
+- Group staging area can be redone in the front-end and back-end to use a websocket implementation instead of a heartbeat approach.
+- Remove unnecessary end-points that were created in the previous iteration of the project
+- Find a way to check the authorization of the user without calling /self endpoint on every page
 
 <img src='https://cdn.discordapp.com/attachments/236354463558795264/844545903679373322/dd86814627225cd1bf9b48c7c4b76979274ea71de3a2ca25ba3374ba2286a2cd.png'/>
