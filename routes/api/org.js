@@ -31,6 +31,14 @@ router.post('/create', async (req, res) => {
             })
 
             let allMembers = orgAccessCode.members;
+            
+            if (allMembers.length <= 1) {
+                res.json({
+                    status: 'error',
+                    error: 'cannot create a group of 1'
+                });
+                return
+            }
 
             // create the org with all the members
             let org = await req.db.Org.create({
@@ -39,6 +47,7 @@ router.post('/create', async (req, res) => {
                 courseTitle: req.body.courseTitle,
                 quarterOffered: req.body.quarterOffered,
                 members: allMembers,
+                weekNumber: 1
             });
 
             // update the orgId field in orgaccesscode
@@ -135,6 +144,7 @@ router.get('/:orgid', async (req, res) => {
                 members: org.members,
                 teams: org.teams,
                 viewed: org.viewed,
+                weekNumber: org.weekNumber
             });
         } catch (error) {
             res.json({

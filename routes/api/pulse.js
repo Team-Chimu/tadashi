@@ -13,13 +13,18 @@ router.get('/:orgid/:week', async (req, res) => {
     // console.log('sessionIsAuthenticated: ' + req.session.id)
     // if(req.session.isAuthenticated) {
         try {
-            console.log('here');
             const orgid = req.params.orgid;
-            console.log(orgid);
             const weekNum = req.params.week;
-            console.log(weekNum);
             const pulse = await req.db.Pulse.find({orgid: orgid, week: weekNum});
-            console.log(pulse.length);
+            console.log("this is the pulse")
+            console.log(pulse)
+            if (pulse.length == 0) {
+                res.json({
+                    status: 'error',
+                    error: 'pulse does not exist'
+                });
+                return
+            }
             let pulseResults = [];
             for (let i = 0; i< pulse.length; i++){
                 console.log(pulse[i].userid);

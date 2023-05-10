@@ -43,7 +43,8 @@ async function main() {
         quarterOffered: String,
         //accessCode: String,
         members: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
-        viewed: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }] //initialized to null
+        viewed: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }], //initialized to null
+        weekNumber: Number
     });
 
     const orgAccessCodeSchema = new mongoose.Schema({
