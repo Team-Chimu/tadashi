@@ -1,0 +1,30 @@
+.createjoinorg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.createjoinorg-buttons-create {
+    background-color: #FF8139;
+}
+
+.createjoinorg-buttons-join {
+    background-color: #FFE481;
+}
+
+.createjoinorg-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.createjoinorg-buttons button {
+    width: 11em;
+    height: 3.1em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius: 1em;
+}

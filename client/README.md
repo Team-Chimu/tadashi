@@ -24,7 +24,8 @@
   - Linkedin:https://www.linkedin.com/in/youjin-jung-
 
 ### Site Links
--  Client: [Chīmu Client]() 
+-  Client: [Chīmu Client]() NO LINKS YET
+-  Server: [Chīmu Server]() NO LINKS YET
 
 ### Additional Documentation
 -  Design Docs: [Chīmu Figma](https://www.figma.com/file/fhkwXAdBln63vfel1nE4OR/Team-Chimu?node-id=1%3A2&t=UGYFn1aGtxvoOA2F-1)
@@ -38,7 +39,7 @@ Chīmu: Teams in Motion is a mobile-first web application that aims to give the 
 
 ### Acknowledgements
 This project has been guided under Professor Nam-ho, who has provided insightful feedback and monitored the progress throughout the project timeline.
-This project is a continuation of a previous iSchool project, Tadashi. More information can be viewed about this project ![here](https://ischool.uw.edu/capstone/projects/2022/tadashi-ultimate-team-experience).
+This project is a continuation of a previous iSchool project, Tadashi. More information can be viewed about this project [here](https://speedguy00.github.io/tadashi-landing/).
 
 ### End of Life
 We plan to transition our project into open source, effective May 22nd, 2023. By the transition date, we will have shut down any systems that automatically collect user data. We also will have notified all users that their data will be deleted by this transition date. As for cloud infrastructure, we will shut down our infrastructure with MongoDB and all accounts associated with it. The code repository on GitHub will a public repository with our contact information so any groups can successfully transition to our project.
@@ -61,19 +62,21 @@ To handle API requests, ExpressJS is used to route and send data through the web
 ### File Structure
 Below is the general outline of the file structre in the Chīmu repo:
 ```
-root
-├── database
-│   └── database.js (schema)
+src
+└──components
+│   └── common/
+│   └── nav/
+│   └── home/
+│   └── teambase/
+│   └── chat/
+│   └── charters-page/ (aka reflection)
+│   └── tasks-page/
 │
-├── routes
-│   ├── (functions).js
-│   └── api
-│       └── (handlers).js
+├── pages
+│   └── (page).js
 │
-├── public
-│   └── (api front-end unused)
-│
-├── app.js (entry)
+├── App.js (entry)
+├── index.js (caller)
 └── package.json
 ```
 ---
@@ -83,9 +86,9 @@ Chīmu is hosted on two separate deployments, the API and the client. The genera
 Our data is on a hosted NoSQL databse. Any hosted cluster that supports standard MongoDB queries shoudl eb interchangeable.
 
 ### Services
-**Deployment**: Azure
-- Link to Server: [Chīmu Server]() 
-- Link to Client: [Chimu Client]() 
+**Deployment**: Heroku
+- Link to Server: [Chīmu Server]() NO LINK
+- Link to Client: [Chimu Client]() NO LINK
 
 **NoSQL Databse**: MongoDB Atlas - Free Tier
 

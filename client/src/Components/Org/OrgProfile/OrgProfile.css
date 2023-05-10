@@ -1,0 +1,172 @@
+.orgprofile {
+    background-color: #FFE481;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-bottom: 7em;
+}
+
+.orgprofile-sectionlabel {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #FF8139;
+    font-size: 1.1em;
+    margin-top: 1.5em;
+}
+
+.orgprofile > div {
+    width: 21em;
+    margin-top: 5em;
+    background-color: #FFFCDE;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.orgprofile > div > div {
+    position: relative;
+    bottom: 3em;
+}
+
+.orgprofile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.orgprofile-header img {
+    width: 6em;
+    height: 6em;
+    border-radius: 10em;
+    box-shadow: -2px 5px 7px 3px #00000041;
+}
+
+.orgprofile-header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.5em;
+    margin-bottom: 0;
+    margin-top: .5em;
+}
+
+.orgprofile-header h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: .8em;
+    color: #005855;
+    margin: 0;
+}
+
+.orgprofile-about {
+    width: 85%;
+}
+
+.orgprofile-about-card {
+    background-color: white;
+    padding: 0.8em 0.5em 0.8em 0.5em;
+    border-radius: 1em;
+    box-shadow: -2px 5px 7px 3px #00000041;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.orgprofile-about-card p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: .7em;
+    background-color: #6D9997;
+    border-radius: 0.6em;
+    color: white;
+    padding: 0.25em 1em 0.25em 1em;
+    margin: 3px;
+}
+
+.orgprofile-contacts {
+    width: 85%;
+}
+
+.orgprofile-contacts-card {
+    background-color: white;
+    padding: 0.8em 0.5em 0.8em 0.5em;
+    border-radius: 1em;
+    box-shadow: -2px 5px 7px 3px #00000041;
+    justify-content: center;
+    display: flex;
+    gap: 1em;
+}
+
+.orgprofile-contacts-card div {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.orgprofile-contacts-card-mail {
+    height: 1.2em;
+}
+
+.orgprofile-contacts-card-phone {
+    height: 1.9em;
+}
+
+.orgprofile-contacts-card p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    margin: 0;
+}
+
+.orgprofile-icebreakers {
+    width: 85%;
+}
+
+.orgprofile-icebreakers-card {
+    background-color: white;
+    padding: 0.8em 0.5em 0.8em 0.5em;
+    border-radius: 1em;
+    box-shadow: -2px 5px 7px 3px #00000041;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.orgprofile-icebreakers-card p {
+    margin: 0;
+}
+
+.orgprofile-icebreakers-question {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #005855;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+.orgprofile-icebreakers-answer {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    width: 100%;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+.orgprofile button {
+    background-color: #FF8139;
+    width: 85%;
+    height: 4em;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1em;
+    border: none;
+    border-radius: 1em;
+    position: relative;
+    bottom: 2em;
+}

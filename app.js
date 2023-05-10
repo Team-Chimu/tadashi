@@ -40,7 +40,7 @@ app.use(logger('dev'));
 app.use(express.json({limit: '50mb'}));
 app.use(express.urlencoded({ extended: false, limit: "50mb" }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public'), { extensions: ['html'] }));
+app.use(express.static(path.join(__dirname, '/home/site/wwwroot/client/build'), { extensions: ['html'] }));
 app.use((req, res, next) => {
     req.db = db;
     next();
@@ -78,8 +78,9 @@ app.use(sessions({
 
 app.use(cors({
     // origin: ['https://tadashi-app.herokuapp.com', 'https://tadashi-cli.herokuapp.com'],
-    origin: ['http://localhost:3000', 'http://localhost:3002'],
+    // origin: ['http://localhost:3000', 'http://localhost:3002'],
     // origin: ['https://team-chimu.github.io/Chiimu_Frontend','https://team-chimu.github.io'],
+    origin: ['https://chimuapp.azurewebsites.net', 'https://chimuapp.azurewebsites.net'],
     credentials: true
 }));
 
