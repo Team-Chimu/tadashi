@@ -47,7 +47,7 @@ router.post('/create', async (req, res) => {
                 courseTitle: req.body.courseTitle,
                 quarterOffered: req.body.quarterOffered,
                 members: allMembers,
-                weekNumber: 0
+                weekNumber: 1
             });
 
             // update the orgId field in orgaccesscode
