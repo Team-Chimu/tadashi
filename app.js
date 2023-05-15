@@ -40,7 +40,7 @@ app.use(logger('dev'));
 app.use(express.json({limit: '50mb'}));
 app.use(express.urlencoded({ extended: false, limit: "50mb" }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '/home/site/wwwroot/client/build'), { extensions: ['html'] }));
+app.use(express.static(path.join(__dirname, 'client/build'), { extensions: ['html'] }));
 app.use((req, res, next) => {
     req.db = db;
     next();
@@ -196,5 +196,9 @@ app.use("/api/board", boardsRouter);
 app.use("/api/userprofile", userProfileRouter);
 app.use("/api/teamAgreement", teamAgreementRouter);
 app.use("/api/pulse", pulseRouter);
+
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client/build", "index.html"))
+})
 
 export default app;
