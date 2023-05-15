@@ -24,7 +24,7 @@ function Pulse() {
                 if (data.status === 'success') {
                     setUserInfo(data)
                 } else {
-                    console.log(data.error);
+                    // console.log(data.error);
                     navigate('/');
                 }
             })
@@ -45,7 +45,7 @@ function Pulse() {
                         setPulseDone(true)
                     }
                 } else {
-                    console.log(data.error)
+                    // console.log(data.error)
                 }
             })
     }
@@ -62,7 +62,7 @@ function Pulse() {
                     // console.log('successfully got org info');
                     setOrgInfo(data)
                 } else {
-                    console.log(data.error)
+                    // console.log(data.error)
                 }
             })
     }

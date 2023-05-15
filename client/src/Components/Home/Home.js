@@ -37,7 +37,7 @@ function Home() {
                         navigate('/createjoinorg')
                     }
                 } else {
-                    console.log(data.error);
+                    // console.log(data.error);
                     navigate('/');
                 }
             })
@@ -63,7 +63,7 @@ function Home() {
                         if (data.status === 'success') {
                             memberDoneCount(key, data)
                         } else {
-                            console.log(data.error)
+                            // console.log(data.error)
                         }
                     })
                 }

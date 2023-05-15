@@ -23,18 +23,8 @@ function CreateJoinOrg() {
             .then(res => res.json())
             .then(data => {
                 if (data.status === 'success') {
-                    setUserInfo({
-                        email: data.email,
-                        displayName: data.displayName,
-                        userType: data.userType,
-                        admin: data.admin,
-                        orgs: data.orgs,
-                        id : data._id
-                    })
-                    console.log('loaded user information');
-                    console.log(data)
+                    setUserInfo(data)
                 } else {
-                    console.log(data.error);
                     navigate('/');
                 }
             })
@@ -46,6 +36,9 @@ function CreateJoinOrg() {
 
     return (
         <div className='createjoinorg'>
+            <div className='createjoinorg-text'>
+                <h2>Hello, {userInfo.firstName}!</h2>
+            </div>
             <div className='createjoinorg-buttons'>
                 <button onClick={() => navigate('/createorg')} className='createjoinorg-buttons-create'>Create Group</button>
                 <button onClick={() => navigate('/joinorg')} className='createjoinorg-buttons-join'>Join Group</button>

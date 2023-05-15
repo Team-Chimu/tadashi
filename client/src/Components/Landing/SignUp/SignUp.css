@@ -7,6 +7,7 @@
 
 .signup .signup-text {
     margin-top: 7em;
+    width: 18em;
 }
 
 .signup .signup-text h2 {
@@ -37,8 +38,9 @@
 .signup button {
     margin-top: 5em;
     background-color: #FFE481;
-    width: 11em;
-    height: 3.1em;
+    width: 146.66px;
+    height: 41.33px;
+    color: black;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     border: none;

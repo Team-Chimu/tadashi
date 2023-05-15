@@ -31,10 +31,10 @@ function CreateOrg() {
                         orgs: data.orgs,
                         id : data._id
                     })
-                    console.log('loaded user information');
-                    console.log(data)
+                    // console.log('loaded user information');
+                    // console.log(data)
                 } else {
-                    console.log(data.error);
+                    // console.log(data.error);
                     navigate('/');
                 }
             })
@@ -74,7 +74,7 @@ function CreateOrg() {
         fetch(`${domain}/api/orgaccesscode/delete`, requestOptions)
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+            // console.log(data)
             newAccessCode()
         })
     }

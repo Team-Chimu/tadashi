@@ -31,7 +31,7 @@ function OrgProfile() {
                 if (data.status === 'success') {
                     setUserInfo(data)
                 } else {
-                    console.log(data.error);
+                    // console.log(data.error);
                     navigate('/');
                 }
             })
@@ -72,7 +72,7 @@ function OrgProfile() {
                 if (data.status === 'success') {
                     setOrgInfo(data)
                 } else {
-                    console.log(data.error)
+                    // console.log(data.error)
                 }
             })
     }
@@ -135,7 +135,6 @@ function OrgProfile() {
                 <div className='orgprofile-header'>
                     {teamInfo.profilePic == '' ? <img src={placeholderImg} /> : <img src={teamInfo.profilePic} /> }
                     <h1>{teamInfo.firstName} {teamInfo.lastName}</h1>
-                    <h2>he/him/his</h2>
                 </div>
                 
                 <div className='orgprofile-about'>

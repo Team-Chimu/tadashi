@@ -31,10 +31,10 @@ function JoinOrg() {
                       orgs: data.orgs,
                       id : data._id
                   })
-                  console.log('loaded user information');
-                  console.log(data)
+                //   console.log('loaded user information');
+                //   console.log(data)
               } else {
-                  console.log(data.error);
+                //   console.log(data.error);
                   navigate('/');
               }
           })
@@ -56,13 +56,13 @@ function JoinOrg() {
     .then(res => res.json())
     .then(data => {
         if (data.status === 'success') {
-            console.log('valid access code')
+            // console.log('valid access code')
             navigate('/stagingjoiner', {state: {accessCode: accessCode}, replace: false})
             //window.location.reload(false)
         } else if (data.error == 'code does not exist') {
-            console.log('access code has expired or does not exist')
+            // console.log('access code has expired or does not exist')
         } else {
-            console.log('unable to join org');
+            // console.log('unable to join org');
         }
     })
   }

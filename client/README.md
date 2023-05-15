@@ -24,8 +24,7 @@
   - Linkedin:https://www.linkedin.com/in/youjin-jung-
 
 ### Site Links
--  Client: [Chīmu Client]() NO LINKS YET
--  Server: [Chīmu Server]() NO LINKS YET
+-  Client: [Chīmu Client](https://chimuapp.azurewebsites.net) 
 
 ### Additional Documentation
 -  Design Docs: [Chīmu Figma](https://www.figma.com/file/fhkwXAdBln63vfel1nE4OR/Team-Chimu?node-id=1%3A2&t=UGYFn1aGtxvoOA2F-1)
@@ -86,9 +85,9 @@ Chīmu is hosted on two separate deployments, the API and the client. The genera
 Our data is on a hosted NoSQL databse. Any hosted cluster that supports standard MongoDB queries shoudl eb interchangeable.
 
 ### Services
-**Deployment**: Heroku
-- Link to Server: [Chīmu Server]() NO LINK
-- Link to Client: [Chimu Client]() NO LINK
+**Deployment**: Azure
+- Link to Server: [Chīmu Server](https://chimuapp.azurewebsites.net)
+<!-- - Link to Client: [Chimu Client]()  -->
 
 **NoSQL Databse**: MongoDB Atlas - Free Tier
 
@@ -112,8 +111,6 @@ For a detailed list of available fields and connections, consult `database/datab
 The API is structured in a REST-like format, with GET, POST, PUT, DELETE entries for most endpoints. Endpoints have been tested, however, further testing is required and should be automated going forward. For additional information on payloads, type returns, and expected functionality, consult comments preceding routes.
 
 API functionality is not extensive but sufficient for current implented client activities.
-
-Domain: NO LINK YET
 
 **Routes**
 
@@ -221,10 +218,12 @@ This section is not meant to be authoritative nor exhaustive. It is meant to gui
 
 ### Known Issues
 - The same account can be logged in at the same time on 2 different devices which can cause issues like joining your own group
+- Please don't mess with the ID's in the URL, it will probably mess something up
 
 ### Suggestions
 - Group staging area can be redone in the front-end and back-end to use a websocket implementation instead of a heartbeat approach.
 - Remove unnecessary end-points that were created in the previous iteration of the project
-- Find a way to check the authorization of the user without calling /self endpoint on every page
+- Create a new way to optimally to check the authorization of the user without calling /self endpoint on every page
+- Do authentication checks for groups
 
 <img src='https://cdn.discordapp.com/attachments/236354463558795264/844545903679373322/dd86814627225cd1bf9b48c7c4b76979274ea71de3a2ca25ba3374ba2286a2cd.png'/>

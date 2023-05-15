@@ -7,6 +7,7 @@
 
 .signin .signin-text {
     margin-top: 7em;
+    width: 18em;
 }
 
 .signin .signin-text h2 {
@@ -37,8 +38,9 @@
 .signin button {
     margin-top: 5em;
     background-color: #FF8139;
-    width: 11em;
-    height: 3.1em;
+    width: 146.66px;
+    height: 41.33px;
+    color: black;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     border: none;

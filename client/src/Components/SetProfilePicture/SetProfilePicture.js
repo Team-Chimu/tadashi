@@ -26,10 +26,10 @@ function SetProfilePicture() {
             .then(data => {
                 if (data.status === 'success') {
                     setUserInfo(data)
-                    console.log('loaded user information');
-                    console.log(data)
+                    // console.log('loaded user information');
+                    // console.log(data)
                 } else {
-                    console.log(data.error);
+                    // console.log(data.error);
                     navigate('/');
                 }
             })
@@ -44,18 +44,15 @@ function SetProfilePicture() {
             try {
                 axios.put(`${domain}/api/users/setpic`, {image: sendingImage}, requestOptions)
                 .then(res => {
-                    console.log(res.data)
+                    // console.log(res.data)
                     navigate('/home')
                     window.location.reload(false)
-                    // setTimeout(() => {
-                        
-                    // }, 250);
                 })
             } catch(e) {
                 console.log(e)
             }
         } else {
-            console.log('no changes')
+            // console.log('no changes')
         }
     }
 

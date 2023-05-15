@@ -37,10 +37,10 @@ function CreateProfile() {
                         phone : data.phone,
                         workstyle : data.workstyle
                     })
-                    console.log('loaded user information');
-                    console.log(data)
+                    // console.log('loaded user information');
+                    // console.log(data)
                 } else {
-                    console.log(data.error);
+                    // console.log(data.error);
                     navigate('/');
                 }
             })
@@ -69,12 +69,11 @@ function CreateProfile() {
             .then(res => res.json())
             .then(data => {
                 if (data.status === 'success') {
-                    console.log('successfully created user profile')
+                    // console.log('successfully created user profile')
                     if (userInfo.standing == undefined) updateProfile()
-                    // navigate(`/org/${id}`);
                     navigate('/home')
                 } else {
-                    console.log(data.error);
+                    // console.log(data.error);
                 }
             })
     }
@@ -93,9 +92,9 @@ function CreateProfile() {
             .then(res => res.json())
             .then(data => {
                 if (data.status === 'success') {
-                    console.log('successfully updated profile')
+                    // console.log('successfully updated profile')
                 } else {
-                    console.log(data.error);
+                    // console.log(data.error);
                 }
             })
     }

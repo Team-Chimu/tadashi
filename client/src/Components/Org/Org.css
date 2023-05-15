@@ -107,8 +107,9 @@
 }
 
 .org-button {
-    width: 24em;
-    height: 5em;
+    width: 320px;
+    height: 66.66px;
+    color: black;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     border: none;

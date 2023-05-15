@@ -43,10 +43,10 @@ function PulseResponse() {
             .then(data => {
                 if (data.status === 'success') {
                     setUserInfo(data)
-                    console.log('loaded user information');
-                    console.log(data)
+                    // console.log('loaded user information');
+                    // console.log(data)
                 } else {
-                    console.log(data.error);
+                    // console.log(data.error);
                     navigate('/');
                 }
             })
@@ -64,7 +64,7 @@ function PulseResponse() {
                     // console.log(data)
                     setOrgInfo(data)
                 } else {
-                    console.log(data.error)
+                    // console.log(data.error)
                 }
             })
     }
@@ -79,9 +79,9 @@ function PulseResponse() {
             .then(data => {
                 if (data.status === 'success') {
                     setPulseInfo(data)
-                    console.log(data)
+                    // console.log(data)
                 } else {
-                    console.log(data.error);
+                    // console.log(data.error);
                 }
             })
     }
@@ -102,7 +102,7 @@ function PulseResponse() {
                 if (data.status === 'success') {
                     window.location.reload(false)
                 } else {
-                    console.log(data.error);
+                    // console.log(data.error);
                 }
             })
     }
@@ -191,7 +191,7 @@ function PulseResponse() {
     useEffect(() => {
         let info = pulseInfo.pulseResult
         let members = orgInfo.members
-        console.log(pulseStatus)
+        // console.log(pulseStatus)
         if (info != undefined && members != undefined) {
             if (info.length == members.length) {
                 setPulseStatus(0)

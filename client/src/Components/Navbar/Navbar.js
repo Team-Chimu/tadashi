@@ -28,10 +28,10 @@ function Navbar() {
         .then(res => res.json())
         .then(data => {
             if (data.status === 'success') {
-                console.log('successfully signed out');
+                // console.log('successfully signed out');
                 navigate('/');
             } else {
-                console.log('unable to sign out');
+                // console.log('unable to sign out');
             }
         })
   }

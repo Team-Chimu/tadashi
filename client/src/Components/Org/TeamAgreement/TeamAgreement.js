@@ -23,7 +23,7 @@ function TeamAgreement() {
                 if (data.status === 'success') {
                     setUserInfo(data)
                 } else {
-                    console.log(data.error);
+                    // console.log(data.error);
                     navigate('/');
                 }
             })
@@ -60,7 +60,7 @@ function TeamAgreement() {
                 if (data.status === 'success') {
                     navigate(`/org/${id}`)
                 } else {
-                    console.log(data.error);
+                    // console.log(data.error);
                 }
             })
     }
@@ -81,7 +81,7 @@ function TeamAgreement() {
                 if (data.status === 'success') {
                     navigate(`/org/${id}`)
                 } else {
-                    console.log(data.error);
+                    // console.log(data.error);
                 }
             })
     }

@@ -45,7 +45,7 @@ function Org() {
                         })
 
                 } else {
-                    console.log(data.error);
+                    // console.log(data.error);
                     navigate('/');
                 }
             })
@@ -62,7 +62,7 @@ function Org() {
                 if (data.status === 'success') {
                     setOrgInfo(data)
                 } else {
-                    console.log(data.error)
+                    // console.log(data.error)
                 }
             })
     }
@@ -80,7 +80,7 @@ function Org() {
                 if (data.status === 'success') {
                     setTeamAgreementExists(true)
                 } else {
-                    console.log(data.error)
+                    // console.log(data.error)
                 }
             })
     }
@@ -112,7 +112,7 @@ function Org() {
                         }
                     }
                 } else {
-                    console.log(data.error)
+                    // console.log(data.error)
                 }
             })
     }
@@ -287,7 +287,7 @@ function Org() {
                                 <p>This Week</p>
                                 {displayDistribution()}
                             </div>
-                            <p>View the week {orgInfo.weekNumber} Pulse Results</p>
+                            <p onClick={() => navigate(`/org/pulse/${id}/${orgInfo.weekNumber}`)}>View the week {orgInfo.weekNumber} Pulse Results</p>
                         </div>
                     </>
                 }
@@ -381,6 +381,12 @@ function Org() {
     } else {
         return (
             <h1>Loading</h1>
+            // <div className='org'>
+            //     <div className="org-header"><h2>sdhfg</h2><img src="data:image/png;base64,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" /></div>
+            //     <div className="org-teammembers"><h2 className="org-subtitle">Team Members</h2><div className="org-line"></div><div className="org-members"><div><div style={{ border : '3px solid #3CCD2F' }}><img src="/static/media/placeholder-pic.d9227b60f0e5e14c4d63.png" /></div><p>Jason N</p></div></div></div>
+            //     <div className="org-teamagreement"><h2 className="org-subtitle">Team Agreement</h2><div className="org-line"></div><button disabled="" className="org-button">Complete Team Agreement</button></div>
+            //     <div className="org-pulse"><h2 className="org-subtitle">Pulse</h2><div className="org-line"></div><button disabled="" className="org-button"><p>Take Pulse: Week 0</p> (0/2)</button></div>
+            // </div>
         )
     }
 }

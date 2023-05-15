@@ -20,10 +20,10 @@ function Landing() {
             .then(res => res.json())
             .then(data => {
                 if (data.status === 'success') {
-                    console.log('successfully logged in');
+                    // console.log('successfully logged in');
                     navigate('/home');
                 } else {
-                    console.log(data.error)
+                    // console.log(data.error)
                 }
             })
     }

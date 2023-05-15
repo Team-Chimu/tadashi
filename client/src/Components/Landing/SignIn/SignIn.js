@@ -32,7 +32,7 @@ function SignIn() {
                 if (data.status === 'success') {
                     checkAuth();
                 } else {
-                    console.log(data.error);
+                    // console.log(data.error);
                 }
             })
     }
@@ -48,11 +48,11 @@ function SignIn() {
             .then(res => res.json())
             .then(data => {
                 if (data.status === 'success') {
-                    console.log('already logged in');
+                    // console.log('already logged in');
                     navigate('/home');
                     window.location.reload(false)
                 } else {
-                    console.log(data.error)
+                    // console.log(data.error)
                 }
             })
     }
@@ -64,8 +64,7 @@ function SignIn() {
     return (
         <div className='signin'>
             <div className='signin-text'>
-                <h2>Welcome Back!</h2>
-                <h2>Please sign in to continue.</h2>
+                <h2>Sign In</h2>
             </div>
             <div className='signin-inputs'>
                 <input type='text' placeholder='email' onChange={e => setEmail(e.target.value)} />

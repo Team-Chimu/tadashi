@@ -35,14 +35,14 @@ function SignUp() {
             .then(res => res.json())
             .then(data => {
                 if (data.status === 'success') {
-                    console.log('successfully signed up and signed in')
+                    // console.log('successfully signed up and signed in')
                     navigate('/profilepic');
                 } else {
-                    console.log(data.error);
+                    // console.log(data.error);
                 }
             })
         } else {
-            console.log("passwords don't match")
+            // console.log("passwords don't match")
         }
         
     }
@@ -58,10 +58,10 @@ function SignUp() {
             .then(res => res.json())
             .then(data => {
                 if (data.status === 'success') {
-                    console.log('already logged in');
+                    // console.log('already logged in');
                     navigate('/home');
                 } else {
-                    console.log(data.error)
+                    // console.log(data.error)
                 }
             })
     }
@@ -74,7 +74,6 @@ function SignUp() {
         <div className='signup'>
             <div className='signup-text'>
                 <h2>Welcome!</h2>
-                <h2>Please sign up to continue.</h2>
             </div>
             <div className='signup-inputs'>
                 <input type='text' placeholder='First Name' onChange={e => setFirstName(e.target.value)} />

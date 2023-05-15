@@ -112,12 +112,12 @@ router.post('/create', async (req, res) => {
             //     text: 'Test Test'
             // };
             
-            // let second = 1;
-            // let minute = pulse.minute;
-            // let hour = pulse.hour;
-            // let day = pulse.weekday;
-            // let dayOfMonth = '*';
-            // let month = '*';
+            let second = 1;
+            let minute = pulse.minute;
+            let hour = pulse.hour;
+            let day = pulse.weekday;
+            let dayOfMonth = '*';
+            let month = '*';
             
             // cron.schedule(`${second} ${minute} ${hour} ${dayOfMonth} ${month} ${day}`, () => {
             //     transporter.sendMail(mailOptions, function(error, info){
@@ -136,6 +136,15 @@ router.post('/create', async (req, res) => {
                 communicationChannels: communicationChannels,
                 pulse: pulse
             });
+
+            cron.schedule(`${second} ${minute} ${hour} ${dayOfMonth} ${month} ${day}`, async () => {
+                let org = await req.db.Org.findById(orgid);
+                await req.db.Org.findOneAndUpdate(
+                    {_id: orgid},
+                    {weekNumber: org.weekNumber+1}
+                )
+            });
+
             res.json({
                 status: 'success',
                 orgid: teamAgreement.orgid,
@@ -171,7 +180,7 @@ router.put('/edit', async (req, res) => {
                     communicationChannels : req.body.communicationChannels,
                     pulse : req.body.pulse
                 }
-            )
+            ).exec();
             res.json({
                 status: 'success'
             });

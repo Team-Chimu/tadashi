@@ -77,10 +77,10 @@ app.use(sessions({
 }));
 
 app.use(cors({
-    // origin: ['https://tadashi-app.herokuapp.com', 'https://tadashi-cli.herokuapp.com'],
     // origin: ['http://localhost:3000', 'http://localhost:3002'],
     // origin: ['https://team-chimu.github.io/Chiimu_Frontend','https://team-chimu.github.io'],
-    origin: ['https://chimuapp.azurewebsites.net', 'https://chimuapp.azurewebsites.net'],
+    // origin: ['https://chimuapp.azurewebsites.net', 'https://chimuapp.azurewebsites.net'],
+    origin: true,
     credentials: true
 }));
 

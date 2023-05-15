@@ -29,7 +29,7 @@ function StagingCreator() {
                 if (data.status === 'success') {
                     setUserInfo(data)
                 } else {
-                    console.log(data.error);
+                    // console.log(data.error);
                     navigate('/');
                 }
             })
@@ -48,13 +48,13 @@ function StagingCreator() {
         fetch(`${domain}/api/org/create`, requestOptions)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 if (data.status === 'success') {
-                    console.log('successfully created org');
+                    // console.log('successfully created org');
                     navigate(`/createprofile/${data.orgid}`)
                     window.location.reload(false)
                 } else {
-                    console.log('unable to create org');
+                    // console.log('unable to create org');
                 }
             })
     }
@@ -67,7 +67,7 @@ function StagingCreator() {
         fetch(`${domain}/api/orgaccesscode/${accessCode}`, requestOptions)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 if (data.status === 'success') {
                     if (data.members.length != teamCount) {
                         setTeamInfo(data.members)
@@ -79,7 +79,7 @@ function StagingCreator() {
             fetch(`${domain}/api/orgaccesscode/${accessCode}`, requestOptions)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 if (data.status === 'success') {
                     if (data.members.length != teamCount) {
                         setTeamInfo(data.members)

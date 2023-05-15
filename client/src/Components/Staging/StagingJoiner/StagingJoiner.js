@@ -38,7 +38,7 @@ function StagingJoiner() {
         fetch(`${domain}/api/orgaccesscode/${accessCode}`, requestOptions)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 if (data.status === 'success') {
                     if (data.members.length != teamCount) {
                         setTeamInfo(data.members)
@@ -54,7 +54,7 @@ function StagingJoiner() {
             fetch(`${domain}/api/orgaccesscode/${accessCode}`, requestOptions)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 if (data.status === 'success') {
                     if (data.members.length != teamCount) {
                         setTeamInfo(data.members)
