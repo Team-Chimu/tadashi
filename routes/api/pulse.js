@@ -70,6 +70,21 @@ router.post('/create/:orgid/:userid', async (req, res) => {
         //         message: 'not authenticated'
         //     });
         // } else {
+
+            // check if user has already created a pulse
+            let check = await req.db.Pulse.find({
+                orgid : req.params.orgid,
+                userid : req.params.userid
+            })
+
+            if (check.length != 0) {
+                res.json({
+                    status: "error",
+                    pulseid: "you have already created a pulse for this week"
+                });
+                return
+            }
+
             let pulse = await req.db.Pulse.create({
                 orgid: req.params.orgid,
                 userid: req.params.userid,
@@ -81,6 +96,7 @@ router.post('/create/:orgid/:userid', async (req, res) => {
                 status: "success",
                 pulseid: pulse._id
             });
+            return
         // }
     } catch (error) {
         res.json({
