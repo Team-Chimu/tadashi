@@ -1,5 +1,5 @@
 {
-  "name": "tadashi",
+  "name": "chimu",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,7 @@
   "engines": {
     "node": "~14"
   },
-  "author": "Team Tadashi",
+  "author": "Team Chimu",
   "license": "ISC",
   "dependencies": {
     "cookie-parser": "^1.4.6",

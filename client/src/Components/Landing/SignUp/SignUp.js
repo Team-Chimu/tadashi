@@ -38,7 +38,8 @@ function SignUp() {
                     // console.log('successfully signed up and signed in')
                     navigate('/profilepic');
                 } else {
-                    // console.log(data.error);
+                    // comment out later
+                    console.log(data.error);
                 }
             })
         } else {

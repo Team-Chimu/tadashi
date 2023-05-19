@@ -32,7 +32,8 @@ function SignIn() {
                 if (data.status === 'success') {
                     checkAuth();
                 } else {
-                    // console.log(data.error);
+                    // comment out later
+                    console.log(data.error);
                 }
             })
     }

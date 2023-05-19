@@ -191,26 +191,30 @@ function PulseResponse() {
     useEffect(() => {
         let info = pulseInfo.pulseResult
         let members = orgInfo.members
-        // console.log(pulseStatus)
-        if (info != undefined && members != undefined) {
-            if (info.length == members.length) {
-                setPulseStatus(0)
-                return
+        if (info != undefined) {
+            console.log(info)
+            // show results if everyone completed the pulse
+            if (members != undefined) {
+                if (info.length == members.length) {
+                    setPulseStatus(0)
+                    return
+                }
             }
-        }
-        
-        if (info?.length == 0) {
-            setPulseStatus(2)
-        }
 
-        info?.forEach(e => {
-            if (e.userid == userInfo?._id) {
+            // check if user has completed pulse
+            let temp = 0
+            info.forEach(e => {
+                if (e.userid == userInfo?._id) {
+                    temp = 1
+                }
+            });
+
+            if (temp === 1) {
                 setPulseStatus(1)
-                return
             } else {
                 setPulseStatus(2)
             }
-        });
+        }
     }, [orgInfo])
 
     // make 3 if else to check for 
