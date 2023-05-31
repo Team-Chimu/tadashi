@@ -149,6 +149,10 @@ async function main() {
         week: Number
     });
 
+    const questionsSchema = new mongoose.Schema({
+        questions: [String]
+    })
+
     db.User = mongoose.model('User', userSchema);
     db.Org = mongoose.model('Org', orgSchema);
     db.OrgAccessCode = mongoose.model('OrgAccessCode', orgAccessCodeSchema);
@@ -159,6 +163,7 @@ async function main() {
     db.UserProfile = mongoose.model('UserProfile', userProfileSchema);
     db.TeamAgreement = mongoose.model('TeamAgreement', teamAgreementSchema);
     db.Pulse = mongoose.model('Pulse', pulseSchema);
+    db.Questions = mongoose.model('Questions', questionsSchema)
 }
 
 export default db;
