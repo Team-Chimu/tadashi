@@ -1,49 +1,23 @@
 import express from 'express';
 var router = express.Router();
 
-// router.get('/questions', async (req, res) => {
-//     try {
-//         let questions = await req.db.Questions.find()
-
-//         if (questions.length == 0) {
-//             res.json({
-//                 status: 'error',
-//                 message: 'no questions found'
-//             })
-//             return
-//         }
-
-//         res.json({
-//             status: 'success',
-//             questions: questions[0]
-//         })
-//         return
-//     } catch (e) {
-//         res.json({
-//             status: 'error',
-//             error: 'error'
-//         });
-//     }
-// })
-
-router.post('/questions', async (req, res) => {
-    if (process.env.SUPER_SECRET_PASSWORD != req.body.SUPER_SECRET_PASSWORD) {
-        res.json({
-            status: 'error',
-            message: 'you are not Nam-ho'
-        })
-        return
-    }
+router.get('/questions', async (req, res) => {
     try {
-        await req.db.Questions.deleteMany()
+        let questions = await req.db.Questions.find()
 
-        await req.db.Questions.create({
-            questions: req.body.questions
-        });
+        if (questions.length == 0) {
+            res.json({
+                status: 'error',
+                message: 'no questions found'
+            })
+            return
+        }
 
         res.json({
             status: 'success',
+            questions: questions[0]
         })
+        return
     } catch (e) {
         res.json({
             status: 'error',
@@ -51,6 +25,32 @@ router.post('/questions', async (req, res) => {
         });
     }
 })
+
+// router.post('/questions', async (req, res) => {
+//     if (process.env.SUPER_SECRET_PASSWORD != req.body.SUPER_SECRET_PASSWORD) {
+//         res.json({
+//             status: 'error',
+//             message: 'you are not Nam-ho'
+//         })
+//         return
+//     }
+//     try {
+//         await req.db.Questions.deleteMany()
+
+//         await req.db.Questions.create({
+//             questions: req.body.questions
+//         });
+
+//         res.json({
+//             status: 'success',
+//         })
+//     } catch (e) {
+//         res.json({
+//             status: 'error',
+//             error: 'error'
+//         });
+//     }
+// })
 
 router.get('/:orgid/:userid', async (req, res) => {
     // console.log('sessionIsAuthenticated: ' + req.session.id)
