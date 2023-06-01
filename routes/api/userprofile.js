@@ -26,32 +26,6 @@ router.get('/questions', async (req, res) => {
     }
 })
 
-router.post('/questions', async (req, res) => {
-    if (process.env.SUPER_SECRET_PASSWORD != req.body.SUPER_SECRET_PASSWORD) {
-        res.json({
-            status: 'error',
-            message: 'you are not Nam-ho'
-        })
-        return
-    }
-    try {
-        await req.db.Questions.deleteMany()
-
-        await req.db.Questions.create({
-            questions: req.body.questions
-        });
-
-        res.json({
-            status: 'success',
-        })
-    } catch (e) {
-        res.json({
-            status: 'error',
-            error: 'error'
-        });
-    }
-})
-
 router.get('/:orgid/:userid', async (req, res) => {
     // console.log('sessionIsAuthenticated: ' + req.session.id)
     if(req.session.isAuthenticated) {

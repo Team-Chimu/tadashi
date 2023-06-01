@@ -3,7 +3,7 @@ import path from 'path';
 import logger from 'morgan';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import boomRouter from './routes/boom.js';
+import adminRouter from './routes/admin.js';
 import indexRouter from './routes/index.js';
 import loginRouter from './routes/login.js';
 import usersRouter from './routes/api/users.js';
@@ -77,9 +77,10 @@ app.use(sessions({
 }));
 
 app.use(cors({
-    origin: ['https://chimuapp.azurewebsites.net', 'https://chimuapp.azurewebsites.net/*'],
+    // add another origin for the admin page
+    // origin: ['https://chimuapp.azurewebsites.net', 'https://chimuapp.azurewebsites.net/*'],
     // origin: ['http://localhost:3000', 'http://localhost:3002'],
-    // origin: true,
+    origin: true,
     // origin: ['https://team-chimu.github.io/Chiimu_Frontend','https://team-chimu.github.io'],
     credentials: true
 }));
@@ -184,7 +185,7 @@ app.get('/signout',
 )
 
 app.use("/", indexRouter);
-app.use("/boom", boomRouter);
+app.use("/admin", adminRouter);
 app.use("/login", loginRouter);
 app.use("/api/users", usersRouter);
 app.use("/api/org", orgsRouter);
