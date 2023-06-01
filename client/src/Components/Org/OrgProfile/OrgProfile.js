@@ -144,8 +144,8 @@ function OrgProfile() {
                         <p>Major: {teamInfo.major}</p>
                         <p>{teamInfo.workstyle}</p>
                         <p>{teamInfo.standing}</p>
-                        <p>Class of 2025</p>
-                        <p>Golfing</p>
+                        {/* <p>Class of 2025</p>
+                        <p>Golfing</p> */}
                     </div>
                 </div> 
 

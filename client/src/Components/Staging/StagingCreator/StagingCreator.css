@@ -54,6 +54,7 @@
     height: 3.5em;
     width: 3.5em;
     border-radius: 10em;
+    object-fit: cover;
 }
 
 .stagingcreator-member p {

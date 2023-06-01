@@ -77,6 +77,10 @@
     width: 1.7em;
 }
 
+.teamagreement-input-header img:hover {
+    cursor: pointer;
+}
+
 .teamagreement-input-header h2 {
     width: 20em;
     font-family: 'Poppins', sans-serif;
@@ -199,4 +203,5 @@
 
 .teamagreement-submit:disabled {
     background-color: #434343;
+    cursor: default;
 }

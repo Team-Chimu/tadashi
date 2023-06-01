@@ -48,11 +48,26 @@ function CreateProfile() {
 
     useEffect(() => {
         getUserInfo();
+        getQuestionsInfo();
     }, [])
 
     // these questions can be made somewhere else later
-    const questions = ['question one', 'question two', 'question three'];
+    const [questions, setQuestions] = useState([]);
     const [answers, setAnswers] = useState([]);
+
+    function getQuestionsInfo() {
+        const requestOptions = {
+            credentials: 'include',
+            method: 'GET'
+        }
+        fetch(`${domain}/api/userprofile/questions`, requestOptions)
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    setQuestions(data.questions.questions)
+                }
+            })
+    }
 
 
     function createProfile() {
@@ -111,6 +126,7 @@ function CreateProfile() {
     const [markDone, setMarkDone] = useState(false)
 
     function nextQuestion(a = false, b = null) {
+        if (document.querySelector('.createprofile-input').value == '') return
         setQuestionNum(questionNum + 1)
         document.querySelector('.createprofile-input').value = ''
         setProgress(progress + 1)
@@ -247,8 +263,12 @@ function CreateProfile() {
         }
     },[flag])
 
+    useEffect(() => {
+        setTotal(questions?.length + 5)
+    }, [questions])
+
     const [progress, setProgress] = useState(0)
-    const [total, setTotal] = useState(questions.length + 5)
+    const [total, setTotal] = useState()
 
     return (
         <div className='createprofile'>

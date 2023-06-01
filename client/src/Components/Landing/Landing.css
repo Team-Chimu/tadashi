@@ -75,3 +75,19 @@
     border: none;
     border-radius: 1em;
 }
+
+.landing-footer {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    bottom: 0;
+    padding-bottom: 0.5em;
+    padding-right: 2em;
+    width: 100%;
+}
+
+.landing-footer a {
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}

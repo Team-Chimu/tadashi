@@ -257,21 +257,21 @@ function Org() {
                         green button this week's pulse status bar, view week n pulse results
                 */}
                 {
-                    !teamAgreementExists ? <button disabled={true} className='org-button'><p>Take Pulse: Week {orgInfo.weekNumber}</p> ({pulseCount}/{orgInfo.members.length})</button>
+                    !teamAgreementExists ? <button disabled={true} className='org-button'><p>Take Pulse: Week {orgInfo.weekNumber}</p> ({pulseCount}/{orgInfo.members?.length})</button>
                     :   !pulseDone ? 
                             iDidMyPulse ? 
                             <button onClick={() => navigate(`/org/pulse/${id}`)} disabled={!ready2} className='org-button'>
                                 <p>Pulse Taken: Week {orgInfo.weekNumber}</p> 
                                 <div>
                                     <img src={greenCheck} className='org-check'/>
-                                    ({pulseCount}/{orgInfo.members.length})
+                                    ({pulseCount}/{orgInfo.members?.length})
                                 </div>
                                 
                             </button>
                             :
                             <button onClick={() => navigate(`/org/pulse/${id}`)} disabled={!ready2} className='org-button'>
                                 <p>Take Pulse: Week {orgInfo.weekNumber}</p>
-                                ({pulseCount}/{orgInfo.members.length})
+                                ({pulseCount}/{orgInfo.members?.length})
                             </button>
                     :   
                     <>
@@ -279,7 +279,7 @@ function Org() {
                             <p>Pulse Completed: Week {orgInfo.weekNumber}</p>
                             <div>
                                 <img src={greenCheck} className='org-check'/>
-                                ({pulseCount}/{orgInfo.members.length})
+                                ({pulseCount}/{orgInfo.members?.length})
                             </div>
                         </button>
                         <div className='org-pulse-info'>
@@ -373,7 +373,7 @@ function Org() {
                 <div className='org-header'>
                     {/* will change this h2 to an input field later */}
                     <h2>{orgInfo.name}</h2>
-                    <img src={edit} />
+                    {/* <img src={edit} /> */}
                 </div>
                 {displayPriority()}
             </div>

@@ -41,6 +41,7 @@
     height: 6em;
     border-radius: 10em;
     box-shadow: -2px 5px 7px 3px #00000041;
+    object-fit: cover;
 }
 
 .orgprofile-header h1 {

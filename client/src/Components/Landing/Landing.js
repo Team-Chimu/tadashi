@@ -49,6 +49,9 @@ function Landing() {
                 <button className='landing-buttons-signup' onClick={() => navigate('/signup')}>sign up</button>
             </div>
 
+            <div className='landing-footer'>
+                <a href='https://team-chimu.github.io/chimu-landing/' target='_blank'>landing page</a>
+            </div>
         </div>
     )
 

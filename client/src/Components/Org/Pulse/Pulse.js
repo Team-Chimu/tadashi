@@ -67,6 +67,10 @@ function Pulse() {
             })
     }
 
+    function handleNavigateToPulseResponsePage(e) {
+        navigate(`/org/pulse/${id}/${e}`)
+    }
+
     function displayWeeks() {
         let weeks = []
         for (let i = orgInfo.weekNumber; i > 0; i--) {
@@ -76,13 +80,13 @@ function Pulse() {
             weeks.map((e) => {
                 if (e == orgInfo.weekNumber && !pulseDone) {
                     return(
-                        <div className='pulse-weeks' key={e} onClick={() => navigate(`${e}`)} style={{backgroundColor:'#00585551'}}>
+                        <div className='pulse-weeks' key={e} onClick={() => handleNavigateToPulseResponsePage(e)} style={{backgroundColor:'#00585551'}}>
                             <p style={{color:'black'}}>Week {e}</p>
                         </div>
                     )
                 } else {
                     return(
-                        <div className='pulse-weeks' key={e} onClick={() => navigate(`${e}`)} style={{backgroundColor:'#005855c4'}}>
+                        <div className='pulse-weeks' key={e} onClick={() => handleNavigateToPulseResponsePage(e)} style={{backgroundColor:'#005855c4'}}>
                             <p>Week {e}</p>
                             <img src={check}/>
                         </div>

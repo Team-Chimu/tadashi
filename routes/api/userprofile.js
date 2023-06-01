@@ -1,9 +1,60 @@
 import express from 'express';
 var router = express.Router();
 
+// router.get('/questions', async (req, res) => {
+//     try {
+//         let questions = await req.db.Questions.find()
+
+//         if (questions.length == 0) {
+//             res.json({
+//                 status: 'error',
+//                 message: 'no questions found'
+//             })
+//             return
+//         }
+
+//         res.json({
+//             status: 'success',
+//             questions: questions[0]
+//         })
+//         return
+//     } catch (e) {
+//         res.json({
+//             status: 'error',
+//             error: 'error'
+//         });
+//     }
+// })
+
+router.post('/questions', async (req, res) => {
+    if (process.env.SUPER_SECRET_PASSWORD != req.body.SUPER_SECRET_PASSWORD) {
+        res.json({
+            status: 'error',
+            message: 'you are not Nam-ho'
+        })
+        return
+    }
+    try {
+        await req.db.Questions.deleteMany()
+
+        await req.db.Questions.create({
+            questions: req.body.questions
+        });
+
+        res.json({
+            status: 'success',
+        })
+    } catch (e) {
+        res.json({
+            status: 'error',
+            error: 'error'
+        });
+    }
+})
+
 router.get('/:orgid/:userid', async (req, res) => {
     // console.log('sessionIsAuthenticated: ' + req.session.id)
-    // if(req.session.isAuthenticated) {
+    if(req.session.isAuthenticated) {
         try {
             const orgid = req.params.orgid;
             const userid = req.params.userid;
@@ -31,17 +82,17 @@ router.get('/:orgid/:userid', async (req, res) => {
                 error: 'error'
             });
         }
-    // } else {
-    //     res.json({
-    //         status: 'error',
-    //         error: 'not authenticated'
-    //     });
-    // }
+    } else {
+        res.json({
+            status: 'error',
+            error: 'not authenticated'
+        });
+    }
 });
 
 router.post('/create', async (req, res) => {
     // console.log('sessionIsAuthenticated: ' + req.session.id)
-    // if(req.session.isAuthenticated) {
+    if(req.session.isAuthenticated) {
         try {
             console.log('here');
             await req.db.UserProfile.create({
@@ -61,17 +112,17 @@ router.post('/create', async (req, res) => {
                 error: 'error'
             });
         }
-    // } else {
-    //     res.json({
-    //         status: 'error',
-    //         error: 'not authenticated'
-    //     });
-    // }
+    } else {
+        res.json({
+            status: 'error',
+            error: 'not authenticated'
+        });
+    }
 });
 
 router.put('/:orgid/:userid', async (req, res) => {
     // console.log('sessionIsAuthenticated: ' + req.session.id)
-    // if(req.session.isAuthenticated) {
+    if(req.session.isAuthenticated) {
         try {
             console.log('here');
             const orgid = req.params.orgid;
@@ -94,17 +145,17 @@ router.put('/:orgid/:userid', async (req, res) => {
                 error: 'error'
             });
         }
-    // } else {
-    //     res.json({
-    //         status: 'error',
-    //         error: 'not authenticated'
-    //     });
-    // }
+    } else {
+        res.json({
+            status: 'error',
+            error: 'not authenticated'
+        });
+    }
 });
 
 router.delete('/:orgid/:userid', async (req, res) => {
     // console.log('sessionIsAuthenticated: ' + req.session.id)
-    // if(req.session.isAuthenticated) {
+    if(req.session.isAuthenticated) {
         try {
             console.log('here');
             const orgid = req.params.orgid;
@@ -121,12 +172,12 @@ router.delete('/:orgid/:userid', async (req, res) => {
                 error: 'error'
             });
         }
-    // } else {
-    //     res.json({
-    //         status: 'error',
-    //         error: 'not authenticated'
-    //     });
-    // }
+    } else {
+        res.json({
+            status: 'error',
+            error: 'not authenticated'
+        });
+    }
 });
 
 

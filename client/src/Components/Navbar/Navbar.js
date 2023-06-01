@@ -2,13 +2,21 @@ import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
 import { domain } from '../../domain.js'
 import './Navbar.css'
-import backArrow from '../../images/back-arrow.png'
+import LogoutIcon from '@mui/icons-material/Logout';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 function Navbar() {
 
   const navigate = useNavigate();
 
+  const currentPath = window.location.pathname
+
   const blacklistedPaths = ['/']
+  const nonAuthPahts = ['/signin', '/signup']
+
+  function goToLanding() {
+    navigate('/')
+  }
 
   function goHome() {
     navigate('/home')
@@ -36,16 +44,22 @@ function Navbar() {
         })
   }
 
-  function testing() {
-    console.log(window.location.pathname)
-  }
-
-  if (!blacklistedPaths.includes(window.location.pathname)) {
-    return (
-      <div className='navbar'>
-        <img src={backArrow} onClick={window.location.pathname == '/home' ? signOut : goHome} />
-      </div>
-    )
+  if (!blacklistedPaths.includes(currentPath)) {
+    if (nonAuthPahts.includes(currentPath)) {
+      return (
+        <div className='navbar'>
+          <ArrowBackIcon onClick={goToLanding} className='navbar-icon'/>
+        </div>
+      )
+    } else {
+      return (
+        <div className='navbar'>
+          <ArrowBackIcon onClick={goHome} className='navbar-icon'/>
+          <LogoutIcon onClick={signOut} className='navbar-icon'/>
+        </div>
+      )
+    }
+    
   }
   
 }
