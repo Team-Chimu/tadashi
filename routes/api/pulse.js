@@ -74,13 +74,14 @@ router.post('/create/:orgid/:userid', async (req, res) => {
             // check if user has already created a pulse
             let check = await req.db.Pulse.find({
                 orgid : req.params.orgid,
-                userid : req.params.userid
+                userid : req.params.userid,
+                week : req.body.week
             })
 
             if (check.length != 0) {
                 res.json({
                     status: "error",
-                    pulseid: "you have already created a pulse for this week"
+                    error: "you have already created a pulse for this week"
                 });
                 return
             }
@@ -97,7 +98,7 @@ router.post('/create/:orgid/:userid', async (req, res) => {
                 pulseid: pulse._id
             });
             return
-        // }
+        //  }
     } catch (error) {
         res.json({
             status: 'error',
