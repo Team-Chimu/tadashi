@@ -1,0 +1,9 @@
+.App {
+    background-color: #FFFCF5;
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.15s ease-in;
+}

@@ -1,0 +1,83 @@
+.home {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 4em;
+    width: 18em;
+}
+
+.home-header h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.3em;
+    color: #005855;
+}
+
+.home-header img {
+    width: 4em;
+    height: 4em;
+    border-radius: 5em;
+    object-fit: cover;
+}
+
+.home-header img:hover {
+    cursor: pointer;
+}
+
+.home-teamcards {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2em;
+    width: 21em;
+}
+
+.home-teamcard {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1em;
+    margin: 20px 20px 20px 20px;
+    position: relative;
+    width: 8em;
+    height: 8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-teamcard:hover {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.15s ease-in;
+}
+
+.home-teamcard p {
+    margin: 0;
+    position: relative;
+    top: .5em;
+}
+
+.home-teamcard-name {
+    font-size: 1.2em;
+}
+
+.home-teamcard-quarteroffered {
+    font-size: .7em;
+    color: white;
+}
+
+.home-teamcard img {
+    position: relative;
+    width: 40%;
+    height: 40%;
+}
+
+.home-teamcard p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}

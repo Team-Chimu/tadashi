@@ -1,0 +1,97 @@
+.createprofile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.createprofile-inputfields {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    margin-bottom: 10em;
+}
+
+.createprofile-input {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    height: 2.5em;
+    border-radius: .5em;
+    border: 0;
+    /* border: 3px solid #005855; */
+    width: 16.5em;
+    box-shadow: 5px 5px 8px 2px #00000041;
+    width: 22em;
+    padding-left: 1em;
+}
+
+.createprofile-input:focus {
+    outline: none;
+}
+
+.createprofile-inputfields button {
+    width: 7.5em;
+    height: 3.1em;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius: 1em;
+    margin-top: 0.5em;
+    color: #FFFFFF;
+    
+}
+
+.createprofile-inputfields h3 {
+    color: #005855;
+    margin-bottom: 0;
+}
+
+.createprofile-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.createprofile-buttons-back {
+    background-color: #C4C4C4;
+}
+
+.createprofile-buttons-next {
+    background-color: #005855;
+}
+
+.createprofile-progressborder {
+    height: 1em;
+    width: 17em;
+    background-color: #FFFCF5;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid #757575;
+    border-radius: 2em;
+}
+
+.createprofile-progressborder div {
+    margin: 0 2px 0 2px;
+    border-radius: 2em;
+    height: 0.8em;
+    background-color: #9EECC8;
+}
+
+.createprofile-progressbar {
+    width: 19.5em;
+    display: flex;
+    margin: 0;
+    justify-content: space-between;
+}
+
+.createprofile-progressbar p {
+    position: relative;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #757575;
+    bottom: 2px;
+}

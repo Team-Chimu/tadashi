@@ -1,0 +1,75 @@
+.stagingcreator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #FFFCF5;
+}
+
+.stagingcreator-message {
+    margin-top: 6em;
+    width: 21em;
+}
+
+.stagingcreator-message p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    color: #333333;
+}
+
+.stagingcreator-accesscode {
+    width: 17em;
+    height: 2.7em;
+    background-color: white;
+    border: 3px solid #005855;
+    border-radius: 0.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stagingcreator-accesscode p {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.4em;
+    color: #333333;
+}
+
+.stagingcreator-members {
+    height: 25em;
+    margin-top: 1em;
+}
+
+.stagingcreator-member {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.stagingcreator-member img {
+    height: 3.5em;
+    width: 3.5em;
+    border-radius: 10em;
+    object-fit: cover;
+}
+
+.stagingcreator-member p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.stagingcreator button {
+    margin-top: 1em;
+    background-color: #FFE481;
+    width: 146.66px;
+    height: 41.33px;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius: 1em;
+}

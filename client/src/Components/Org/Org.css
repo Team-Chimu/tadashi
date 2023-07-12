@@ -1,0 +1,198 @@
+.org {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.org-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3em;
+    border-bottom: 3px solid #005855;
+    padding-bottom: 0.2em;
+    padding: 2em 0.6em 0 0.6em;
+}
+
+.org-header h2 {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.3em;
+    color: #005855;
+}
+
+.org-header img {
+    width: 2em;
+    height: 2em;
+}
+
+.org-line {
+    height: 2px;
+    background-color: #C4C4C4;
+    margin-bottom: 1em;
+    margin-top: 0.3em;
+}
+
+.org-teammembers {
+    margin-top: 2em;
+    width: 20em;
+}
+
+.org-subtitle {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.2em;
+    color: #005855;
+}
+
+.org-members {
+    display: flex;
+    align-items: center;
+    gap: 1.3em;
+}
+
+.org-members > div {
+    width: 4em;
+    height: 6em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.org-members > div p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.85em;
+    margin: 0;
+    padding-top: .5em;
+}
+
+.org-members > div div {
+    width: 4em;
+    height: 4em;
+    background-color: white;
+    /* border: 3px solid orange; */
+    border-radius: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.org-members > div div img {
+    width: 3.8em;
+    height: 3.8em;
+    border-radius: 10em;
+    object-fit: cover;
+}
+
+.org-members > div div img:hover {
+    cursor: pointer;
+}
+
+.org-teamagreement {
+    margin-top: 2em;
+    width: 20em;
+}
+
+.org-teamagreement button {
+    background-color: #ffe481;
+}
+
+.org-pulse {
+    margin-top: 2em;
+    width: 20em;
+}
+
+.org-pulse button {
+    background-color: #9EECC8;
+}
+
+.org-button {
+    width: 320px;
+    height: 66.66px;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    border: none;
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5em 0 1.5em;
+}
+
+.org-button > div {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.org-button:disabled {
+    color: rgba(0, 0, 0, 0.75);
+    opacity: 75%;
+}
+
+.org-button:disabled:hover {
+    cursor: default;
+}
+
+.org-check {
+    height: 1.7em;
+    width: 1.7em;
+}
+
+.org-pulse-info {
+    margin-top: 1em;
+    width: 20em;
+    border-radius: 0.9em;
+    height: 8em;
+    background-color: #9EECC8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.org-pulse-info > div {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.org-pulse-info p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 13.3333px;
+}
+
+.org-pulse-info > p {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.org-pulse-info > p {
+    cursor: pointer;
+}
+
+.org-pulse-resultsbar {
+    height: 2em;
+    width: 12.5em;
+    display: flex;
+    border-radius: 10em;
+    overflow: hidden;
+}
+
+.org-pulse-resultsbar-red {
+    background-color: #F44B37;
+}
+
+.org-pulse-resultsbar-yellow {
+    background-color: #F6D765;
+}
+
+.org-pulse-resultsbar-green {
+    background-color: #1f9a42b4;
+}
